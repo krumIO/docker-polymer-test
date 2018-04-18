@@ -1,0 +1,5 @@
+xvfb-run --auto-servernum polymer test --verbose -l chrome
+xvfb-run --auto-servernum polymer test --simpleOutput --expanded -l chrome
+
+docker run -it -v "$(pwd):/usr/src/app" --security-opt seccomp:unconfined krumio/polymer-test:latest bash -c "cd usr/src/app && bower install && xvfb-run --auto-servernum polymer test --simpleOutput --expanded -l chrome"
+docker run -it -v "$(pwd):/usr/src/app" --security-opt seccomp:unconfined krumio/polymer-test:latest xvfb-run --auto-servernum polymer test --simpleOutput --expanded -l chrome
