@@ -3,7 +3,7 @@ FROM node:8-stretch
 # add Chrome sources
 RUN apt-get install -y curl \
     && curl -sL https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
-    && echo 'deb http://dl.google.com/linux/chrome/deb/ stable main' >> /etc/apt/sources.list.d/google.list \
+    && echo 'deb http://dl.google.com/linux/chrome/deb/ stable main' >> /etc/apt/sources.list.d/google.list
 
 RUN apt-get update;
 
